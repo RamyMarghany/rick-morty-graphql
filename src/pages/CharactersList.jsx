@@ -1,23 +1,9 @@
-import { useQuery, gql } from '@apollo/client';
-
-import "./style.css";
-
-// create the query and should be capitalize
-const GET_CHARACTERS = gql`
-query{
-    characters{
-        results{
-            name
-            image
-            id
-        }
-    }
-}
-`
+import { useCharacters } from "../hooks/useCharacters";
+import "./CharactersList.css";
 
 export const CharactersList = () => {
     // path the query to the useQuery hook and return (error, loading, and data)
-    const { error, loading, data } = useQuery(GET_CHARACTERS);
+    const { error, loading, data } = useCharacters();
     if (error) return <h3>something went wrong!</h3>;
     if (loading) return <h2>Loading...</h2>
 
