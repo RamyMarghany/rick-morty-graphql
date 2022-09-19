@@ -1,6 +1,7 @@
 import { useQuery, gql } from '@apollo/client';
 
 // create the query and should be capitalize
+// Note: we are using (results) in the query when we return an array of object
 const GET_CHARACTERS = gql`
 query{
     characters{
